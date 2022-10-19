@@ -98,7 +98,8 @@ matrix.DOMAIN.tld {
   #handle @wellknown {
   #  # .well-known is handled by base domain
   #  reverse_proxy https://DOMAIN.tld {
-  #  header_up Host {http.reverse_proxy.upstream.hostport}
+  #    header_up Host {http.reverse_proxy.upstream.hostport}
+  #  }
   #}
 
   handle {
@@ -159,6 +160,7 @@ element.DOMAIN.tld {
                      header_up X-Forwarded-TlsProto {tls_protocol}
                      header_up X-Forwarded-TlsCipher {tls_cipher}
                      header_up X-Forwarded-HttpsProto {proto}
+              }
         }
 }
 
